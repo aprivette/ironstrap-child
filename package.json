@@ -1,0 +1,22 @@
+{
+  "name": "ironstrap",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/ironistic/ironstrap.git"
+  },
+  "author": "",
+  "homepage": "https://bitbucket.org/ironistic/ironstrap#readme",
+  "dependencies": {
+    "gulp": "*",
+    "gulp-clean-css": "*",
+    "gulp-concat": "*",
+    "gulp-sass": "*",
+    "gulp-order": "*",
+    "gulp-rename": "*",
+    "gulp-uglify": "*",
+    "bootstrap": "4.0.0-alpha.6",
+    "font-awesome": "*"
+  }
+}

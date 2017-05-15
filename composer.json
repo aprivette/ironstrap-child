@@ -1,0 +1,9 @@
+{
+	"name": "ironistic/ironstrap-child",
+	"type": "wordpress-theme",
+	"authors": [
+		{
+			"name": "IronStrap Child"
+		}
+	]
+}
