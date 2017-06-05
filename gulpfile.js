@@ -20,10 +20,10 @@ gulp.task('sass', function() {
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
     return gulp.src('js/*.js')
-    	.pipe(order([
-	      'js/global.js',
-	      'js/*.js'
-	    ], { base: '.' }))
+        .pipe(order([
+          'js/global.js',
+          'js/*.js'
+        ], { base: '.' }))
         .pipe(uglify())
         .pipe(rename('site.min.js'))
         .pipe(gulp.dest('js/min'));

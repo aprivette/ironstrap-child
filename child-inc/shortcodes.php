@@ -14,10 +14,10 @@ $prefix = 'ironstrap_';
 //add_shortcode($prefix.'shorcode', 'iron_shortcode_sc');
 function iron_shortcode_sc($atts)
 {
-	extract(shortcode_atts(array(
-	), $atts));
-	
-	$output = '';
-	
-	return $output;
+    extract(shortcode_atts(array(
+    ), $atts));
+
+    $output = '';
+
+    return $output;
 }
