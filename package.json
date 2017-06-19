@@ -9,14 +9,17 @@
   "author": "",
   "homepage": "https://bitbucket.org/ironistic/ironstrap#readme",
   "dependencies": {
+    "font-awesome": "*"
+  },
+  "devDependencies": {
+    "bootstrap": "4.0.0-alpha.6",
     "gulp": "*",
     "gulp-clean-css": "*",
     "gulp-concat": "*",
-    "gulp-sass": "*",
-    "gulp-order": "*",
+    "gulp-if": "*",
     "gulp-rename": "*",
+    "gulp-sass": "*",
     "gulp-uglify": "*",
-    "bootstrap": "4.0.0-alpha.6",
-    "font-awesome": "*"
+    "yargs": "*"
   }
 }
