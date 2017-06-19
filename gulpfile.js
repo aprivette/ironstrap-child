@@ -17,13 +17,16 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('css/min'));
 });
 
+// List all javascript files and directories to include in the correct order.
+var sourceJs = [
+    //'node_modules/example-pkg/example/example.min.js',
+    'js/*.js',
+];
+
 // Concatenate & Minify JS
 gulp.task('scripts', function() {
-    return gulp.src('js/*.js')
-        .pipe(order([
-          'js/global.js',
-          'js/*.js'
-        ], { base: '.' }))
+    return gulp.src(sourceJs)
+        .pipe(concat('site.js'))
         .pipe(uglify())
         .pipe(rename('site.min.js'))
         .pipe(gulp.dest('js/min'));
