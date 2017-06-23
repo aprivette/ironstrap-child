@@ -9,7 +9,8 @@
   "author": "",
   "homepage": "https://bitbucket.org/ironistic/ironstrap#readme",
   "dependencies": {
-    "font-awesome": "*"
+    "font-awesome": "*",
+    "gulp-autoprefixer": "^4.0.0"
   },
   "devDependencies": {
     "bootstrap": "4.0.0-alpha.6",
