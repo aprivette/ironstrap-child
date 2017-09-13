@@ -1,49 +1,54 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var cleancss = require('gulp-clean-css');
-var gulpif = require('gulp-if');
-var autoprefixer = require('gulp-autoprefixer');
 var argv = require('yargs').argv;
+var plugins = require('gulp-load-plugins')();
 
 // Check if compiling with production flag
 var isProduction = (argv.production === undefined) ? false : true;
 
-// Compile Sass
+// Compile sass
 gulp.task('sass', function() {
     return gulp.src('sass/site.scss')
-        .pipe(sass())
-        .pipe(gulpif(isProduction, cleancss()))
-        .pipe(autoprefixer({
+        .pipe(plugins.sass())
+        .pipe(plugins.if(isProduction, plugins.cleanCss()))
+        .pipe(plugins.autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        .pipe(rename('site.min.css'))
+        .pipe(plugins.rename('site.min.css'))
         .pipe(gulp.dest('css'));
 });
 
 // List all javascript files and directories to include in the correct order.
 var sourceJs = [
-    ///'node_modules/example-pkg/example/example.min.js',
+    'node_modules/slick-carousel/slick/slick.min.js',
+    'node_modules/superfish/dist/js/superfish.min.js',
+    'node_modules/headroom.js/dist/headroom.js',
+    'node_modules/headroom.js/dist/jQuery.headroom.js',
+    'js/headroom.js',
     'js/*.js',
 ];
 
-// Concatenate & Minify JS
+// Concatenate & minify js
 gulp.task('scripts', function() {
     return gulp.src(sourceJs)
-        .pipe(concat('site.js'))
-        .pipe(gulpif(isProduction, uglify()))
-        .pipe(rename('site.min.js'))
+        .pipe(plugins.concat('site.js'))
+        .pipe(plugins.if(isProduction, plugins.uglify()))
+        .pipe(plugins.rename('site.min.js'))
         .pipe(gulp.dest('js/min'));
 });
 
-// Watch Files For Changes
+// Watch files for changes
 gulp.task('watch', function() {
     gulp.watch('js/*.js', ['scripts']);
     gulp.watch('sass/*.scss', ['sass']);
+    gulp.watch('node_modules/font-awesome/fonts/*', ['fonts']);
+});
+
+// Copy fonts from node_modules
+gulp.task('fonts', function() {
+    return gulp.src('node_modules/font-awesome/fonts/*')
+        .pipe(gulp.dest('fonts'))
 });
 
 // Default Task
-gulp.task('default', ['sass', 'scripts']);
+gulp.task('default', ['sass', 'scripts', 'fonts']);
