@@ -10,7 +10,7 @@
 
 ## Getting Started
 ### Setup
-1. Use iron-composer or set up theme manually with Visual Composer and ACF Pro installed. Both plugins can be found in Bitbucket. This theme will run without ACF, however to enable full functionality it needs to be installed.
+1. Use iron-composer or set up theme manually with Visual Composer and ACF Pro installed. Both plugins can be found in Bitbucket. This theme will run without ACF, however to enable full functionality it needs to be installed.  If you're not an Ironistic employee, you can find ACF Pro [here](https://github.com/wp-premium/advanced-custom-fields-pro).  If you want to use Visual Composer you'll have to purchase a copy.
 2. Open the terminal and cd to ironstrap-child.  Then, run `npm install` to install Bootstrap, FontAwesome, and other Gulp utilities.
 
 ### Working in IronStrap
