@@ -20,11 +20,6 @@ gulp.task('sass', function() {
 
 // List all javascript files and directories to include in the correct order.
 var sourceJs = [
-    'node_modules/slick-carousel/slick/slick.min.js',
-    'node_modules/superfish/dist/js/superfish.min.js',
-    'node_modules/headroom.js/dist/headroom.js',
-    'node_modules/headroom.js/dist/jQuery.headroom.js',
-    'js/headroom.js',
     'js/*.js',
 ];
 

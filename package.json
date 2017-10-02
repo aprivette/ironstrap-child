@@ -9,7 +9,6 @@
   "author": "",
   "homepage": "https://bitbucket.org/ironistic/ironstrap#readme",
   "devDependencies": {
-    "animate.css": "*",
     "bootstrap": "^4.0.0-beta",
     "font-awesome": "*",
     "gulp": "*",
@@ -21,9 +20,6 @@
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-uglify": "*",
-    "headroom.js": "*",
-    "slick-carousel": "*",
-    "superfish": "*",
     "yargs": "^9.0.0"
   }
 }
