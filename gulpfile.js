@@ -35,7 +35,7 @@ gulp.task('scripts', function() {
 // Watch files for changes
 gulp.task('watch', function() {
     gulp.watch('js/*.js', ['scripts']);
-    gulp.watch('sass/*.scss', ['sass']);
+    gulp.watch('sass/**', ['sass']);
     gulp.watch('node_modules/font-awesome/fonts/*', ['fonts']);
 });
 
