@@ -10,8 +10,8 @@
 
 ## Getting Started
 ### Setup
-1. Use iron-composer or set up theme manually with Visual Composer and ACF Pro installed. Both plugins can be found in Bitbucket. This theme will run without ACF, however to enable full functionality it needs to be installed.  If you're not an Ironistic employee, you can find ACF Pro [here](https://github.com/wp-premium/advanced-custom-fields-pro).  If you want to use Visual Composer you'll have to purchase a copy.
-2. Open the terminal and cd to ironstrap-child.  Then, run `npm install` to install Bootstrap, FontAwesome, and other Gulp utilities.
+1. Use iron-composer or set up theme manually with Visual Composer and ACF Pro installed.  This theme will run without ACF, however to enable full functionality it needs to be installed.  If you're not an Ironistic employee, you can find ACF Pro [here](https://github.com/wp-premium/advanced-custom-fields-pro).  If you want to use Visual Composer you'll have to purchase a copy.
+2. Open the terminal and cd to ironstrap-child.  Then, run `npm install` to install Bootstrap, FontAwesome, Smooth Scroll, and Gulp utilities.
 
 ### Working in IronStrap
 - After setting up your installation, thoroughly look through the IronStrap Options page and populate relevant fields.
@@ -42,7 +42,7 @@ Gulp is a terminal utility for automating front-end tasks. Running `gulp` in the
 3. `gulp --production` // Specifies that changes are ready for production. CSS and JS will be minified / uglified.
 
 #### Gulp Tasks
-- **Sass:** Compiles site.scss to `css/min/site.min.css`. Using the production flag `gulp --production` minifies the contents of site.min.css.
+- **Sass:** Compiles site.scss to `css/min/site.min.css`. Using the production flag `gulp --production` minifies the contents of site.min.css.  All Sass compiled with gulp will automatically include relevant browser prefixes, so there is no need to add webkit, moz, or ms prefixes to your styles.
 - **Javascript:** Concats all .js files in the js directory to site.min.js. global.js is given priority.
 - **Fonts:** Copies font assets from NPM packages to the fonts directory in the child theme.
 
@@ -53,16 +53,20 @@ Gulp is a terminal utility for automating front-end tasks. Running `gulp` in the
 ### What's Included
 - **Visual Composer Elements**
     - IronStrap Retina Image // Uses javascript to situationally display retina images.
+- **Shortcodes**
+	- ironstrap_btn // A button shortcode without styling.  See parameters below.
+		- text
+		- link (defaults to '#'
+		- target (defaults to '_self')
+		- classes
 - **NPM Packages**
     - Gulp Sass, Javascript, and font utilities
     - FontAwesome
     - Bootstrap 4 Beta
 - **Sass**
-    - Bootstrap 4 grid, reboot, display, and visibility components via NPM
+    - Bootstrap 4 grid, reboot, display, flex, and visibility components via NPM
     - FontAwesome via NPM
     - Sass mixins
-        - font-size($size) // Font size converter to rem.
-        - transition($property: all, $duration: 400ms, $easing: ease-in-out) // Transition prefixer
         - image-retina($file, $type, $width, $height) // Retina image generator for divs.
 - **Utility Functions**
 	- ACF Proxies // These functions make sure ACF Pro is installed before calling get_field or the_field. This is ideal so the website won't crash if ACF is deactivated.
@@ -72,6 +76,7 @@ Gulp is a terminal utility for automating front-end tasks. Running `gulp` in the
 ### What isn't Included
 - **Javascript libraries**
     - Including sliders and other javascript libraries should be done on a per site basis via NPM if possible. Recommended slider is Slick Slider.  You can install by running `npm install --save slick-carousel`.
+    - The exception to this is Smooth Scroll, a small library for enabling smooth scrolling to anchors.  It can be enabled in IronStrap Options.
 
 ### Installing NPM Packages
 Almost all reputable frontend packages can be installed with NPM.  If the dependency is only required in development, run `npm install --save-dev package-name`.  For instance, Bootstrap 4 Beta is in dev packages because it is compiled into CSS during development.  Run `npm install --save package-name` for packages required in production.
@@ -84,6 +89,9 @@ Almost all reputable frontend packages can be installed with NPM.  If the depend
     - Hide Author Usernames // Security
     - Remove Meta from Head // Security
     - Disable XMLRPC // Security
+    - Enable Smooth Scroll // Enables smooth scroll to anchors
+	    - Sticky Header Offset Height // Offset smooth scroll by height of sticky header
+    - Hide YouTube related videos // Automatically adds rel=0 URL parameter to YouTube embeds
 - Header
     - Logo // Header logo
     - Logo Width // Width of the logo in pixels
@@ -94,15 +102,20 @@ Almost all reputable frontend packages can be installed with NPM.  If the depend
     - Sticky Logo Height // Sticky header logo height for retina screens with 2x resolution
     - Retina Sticky Logo // Sticky header logo for retina screens with 2x resolution
     - Top Header Sidebars // Number of sidebars to enable above the header
+	    - Top Header Sidebars Breakpoint // Bootstrap breakpoint for top headers sidebars
 - Footer
     - Top Footer Sidebars // Number of sidebars to enable in the footer
+	    - Top Footer Sidebars Breakpoint // Bootstrap breakpoint for top footer sidebars
     - Bottom Footer Sidebars // Number of sidebars to enable below the footer
+	    - Bottom Footer Sidebars Breakpoint // Bootstrap breakpoint for bottom footer sidebars
 - Error
     - 404 Content // 404 editor for PMs
 - Sidebars
     - Create Sidebars // Create sidebars for specific pages
     - Left Sidebar Width // Define width of left-aligned sidebars
     - Right Sidebar Width // Define width of right-aligned sidebars
+    - Reverse Column Wrap On Mobile // Reverses the stacking of the sidebars and main content.  Useful when a left sidebar needs to collapse to the bottom of the page instead of the top.
+    - Sidebar Column Breakpoint // Bootstrap breakpoint for sidebars
 - Text Editor Styles
     - Editor Styles // Create styles which hook into the WordPress text editor (TinyMCE) and assign CSS classes to them.
 - Javascript
@@ -126,6 +139,8 @@ Almost all reputable frontend packages can be installed with NPM.  If the depend
     - Expose ACF Fields // Exposes ACF data on specified post types
 - Structured Data
 	- Options panel for generating structured data for search engines. See [http://schema.org](http://schema.org) for more information.
+- Social
+	- Social Media // Field for listing social media links with links and icons.  This isn't used anywhere by default in IronStrap.
 
 ### Page Options
 - Sidebar
