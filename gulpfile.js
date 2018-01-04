@@ -20,6 +20,7 @@ gulp.task('sass', function() {
 
 // List all javascript files and directories to include in the correct order.
 var sourceJs = [
+    'node_modules/smooth-scroll/dist/js/smooth-scroll.polyfills.js',
     'js/*.js',
 ];
 
