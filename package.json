@@ -20,6 +20,7 @@
     "gulp-rename": "*",
     "gulp-sass": "*",
     "gulp-uglify": "*",
+    "smooth-scroll": "^12.1.5",
     "yargs": "^9.0.0"
   }
 }
