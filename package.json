@@ -1,19 +1,19 @@
 {
-  "name": "ironstrap",
+  "name": "ironstrap-child",
   "version": "1.0.0",
-  "description": "",
+  "description": "A modern, flexible, and responsive WordPress framework built with the Bootstrap grid.",
+  "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/ironistic/ironstrap.git"
+    "url": "git+ssh://git@github.com:aprivette/ironstrap-child.git"
   },
-  "author": "",
-  "homepage": "https://bitbucket.org/ironistic/ironstrap#readme",
+  "author": "Adam Privette",
+  "homepage": "https://github.com/aprivette/ironstrap-child",
   "devDependencies": {
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^4.0.0-beta.3",
     "font-awesome": "*",
-    "gulp": "*",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "*",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean-css": "^3.9.2",
     "gulp-concat": "*",
     "gulp-if": "*",
     "gulp-load-plugins": "^1.5.0",
@@ -21,6 +21,6 @@
     "gulp-sass": "*",
     "gulp-uglify": "*",
     "smooth-scroll": "^12.1.5",
-    "yargs": "^9.0.0"
+    "yargs": "^9.0.1"
   }
 }
